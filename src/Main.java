@@ -16,14 +16,11 @@ public class Main {
         String act = input.replaceAll("[0-9,\\w]", "");
         int countActions = act.length();
 
-        try {
-            if (countActions > 1) {
-                throw new NumberFormatException();
-            }
-        } catch (NumberFormatException var14) {
-            System.out.println("My calculator can only work with two numbers");
-            System.exit(1);
+
+        if (countActions > 1) {
+            throw new NumberFormatException();
         }
+
 
         int actionIndex = -1;
 
@@ -47,14 +44,10 @@ public class Main {
                 b = Integer.parseInt(data[1]);
             }
 
-            try {
-                if (a > 10 || b > 10 || a < 1 || b < 1) {
+            if (a > 10 || b > 10 || a < 1 || b < 1) {
                     throw new ArithmeticException();
                 }
-            } catch (ArithmeticException var15) {
-                System.out.println("Please enter a value less than 10 and not less than 1");
-                System.exit(1);
-            }
+
 
             int var10000;
             switch (actions[actionIndex]) {
